@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Core.Data;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,8 +7,16 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Core
+namespace Infrastructure.Data
 {
+    /// <summary>
+    /// An implementation of the Repository pattern for persisting a domain model aggregate to JSON format.
+    /// Uses <see cref="Newtonsoft.Json"/> under the hood.
+    /// NOTE: See Service classes in the Infrastruture namespace for specific aggregate implementations. 
+    /// This class is intentionally placed in an extended namespace to avoid confusion when referencing the Infrastructure namespace.
+    /// The most common use cases will be to reference only the classes in the Infrastructure namespace, but this is publicly accessible if needed.
+    /// </summary>
+    /// <typeparam name="TEntity">The type of object to be persisted in this repository. A List<typeparamref name="TEntity"/> is the data persisted to file.</typeparam>
     public abstract class JSONRepository<TEntity> : IRepository<TEntity>
     {
         protected readonly List<TEntity> m_Records;

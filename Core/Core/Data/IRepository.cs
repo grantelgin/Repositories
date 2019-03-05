@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 
 
-namespace Core
+namespace Core.Data
 {
     public interface IRepository<TEntity>
     {
