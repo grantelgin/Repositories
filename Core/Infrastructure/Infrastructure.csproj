@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DSVRepository.cs" />
     <Compile Include="Data\JSONRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\XMLRepository.cs" />
